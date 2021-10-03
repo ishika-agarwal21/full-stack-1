@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <title>ptactical-9</title>
+
+        <style>
+            *{
+                padding: 0;
+                margin:0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            html{
+                scroll-padding-top: 70px;
+                scroll-behavior: smooth;
+            }
+            #container{
+                width: 100%;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            #header {
+                background-color: grey;
+                width: 100%;
+                height: 70px;
+                max-width: 1200px;
+                position: fixed;
+                top: 0;
+                height: 70px;
+            }
+
+            .menu {
+                list-style: none;
+                float: right;
+                padding: 0 20px;
+            }
+            .menu li {
+                display: inline-block;
+                line-height: 70px;
+            }
+             .menu li a {
+                 transition: 0.4s;
+                 display: block;
+                 text-decoration: none;
+                 color: white;
+                 padding: 0px 20px;
+                 font-size: 20px;
+                 text-transform: uppercase;
+             }
+
+             .menu li a:hover{
+                 color: black;
+                 background-color: white;
+             }
+
+             .show-btn,
+             .hide-btn,
+             #chk{
+                 font-size: 30px;
+                 line-height: 70px;
+                 color: white;
+                 display: none;
+                 float: right;
+                 padding-right: 20px;
+             }
+
+             #banner{
+                 width: 100%;
+                 margin-top: 90px;
+                 height: 680px;
+                 margin-bottom: 15px;
+                 display: flex;
+                 font-size: 40px;
+                 color: white;
+             }
+             #banner {
+      background-image: url(../images/P8-banner.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    #banner h2 {
+      margin: 20px 20px;
+      color: #fff;
+    }
+
+    #circle-container {
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    #circle-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .circle img {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      background-color: goldenrod;
+      float: left;
+      margin-left: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    
+    #sec2-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    #left-side {
+      width: 50%;
+      height: 550px;
+      background-color: gray;
+      float: left;
+      color: #fff;
+    }
+
+    #left-p>h2 {
+      text-align: left;
+      margin: 10px 5px;
+    }
+
+    #left-p>p {
+      font-size: 20px;
+      padding: 10px;
+      text-align: justify;
+      line-height: 28px;
+    }
+
+    #right-side {
+      width: 48%;
+      height: 550px;
+      float: right;
+    }
+    .article {
+      height: 31%;
+      margin-bottom: 20px;
+      background-color: chocolate;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+    }
+
+    #p1 {
+      background-image: url(../images/p8-1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #p2 {
+      background-image: url(../images/p8-2.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #p3 {
+      background-image: url(../images/p8-3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #grid-container {
+      width: 100%;
+      margin: 15px auto;
+      
+    }
+
+    #grid-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .grid {
+      width: 20%;
+      float: left;
+      margin-left: 50px;
+      background-color: lightgrey;
+      border-radius: 8px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid>img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .grid>h4 {
+      margin: 0px 10px;
+      text-align: center;
+    }
+
+    .grid>p {
+      margin: 10px;
+      font-size: 15px;
+      text-align: justify;
+      line-height: 25px;
+      color: white;
+      overflow: hidden;
+      flex-flow: wrap;
+      display: block;
+    }
+
+    .grid>a {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      background-color: red;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      color: black;
+      font-size: 40px;
+      text-align: center;
+      padding: 25px 0px;
+    }
+
+    .grid>a:hover {
+      background-color: blue;
+    }
+
+   
+    #footer {
+      background-color: plum;
+      height: 100px;
+    }
+
+    #footer>p {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (min-width: 801px) and (max-width: 1199px) {
+      .menu {
+        list-style: none;
+        float: right;
+      }
+
+      .menu li {
+        line-height: 70px;
+        display: inline-block;
+      }
+
+      .menu li a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 0px 20px;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      .menu li a:hover {
+        color: black;
+        background-color: white;
+      }
+
+      html {
+        scroll-padding-top: 70px;
+        scroll-behavior: smooth;
+      }
+
+      #container {
+        width: 100%;
+      }
+
+      .show-btn,
+      .hide-btn,
+      #chk {
+        font-size: 30px;
+        line-height: 70px;
+        color: white;
+        display: none;
+        float: right;
+        padding-right: 20px;
+      }
+
+      
+
+      #header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      
+
+      #banner {
+        width: 100%;
+        margin-top: 90px;
+        height: 680px;
+        margin-bottom: 15px;
+        display: flex;
+        font-size: 40px;
+        color: white;
+      }
+
+      #banner {
+        background-image: url(../images/P8-banner.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      #banner h2 {
+        margin: 20px 20px;
+        color: #fff;
+      }
+
+
+      #circle-container {
+        width: 100%;
+      }
+
+      #circle-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+      }
+
+     
+
+      #sec2-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      #left-side {
+        width: 50%;
+        height: 550px;
+        background-color: gray;
+        float: left;
+        color: #fff;
+      }
+
+      #left-p>h2 {
+        text-align: left;
+        margin: 10px 5px;
+      }
+
+      #left-p>p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+        line-height: 28px;
+      }
+
+      #right-side {
+        width: 48%;
+        height: 550px;
+        float: right;
+      }
+
+      .article {
+        height: 31%;
+        margin-bottom: 20px;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        overflow: hidden;
+      }
+
+      #p1 {
+        background-image: url(../images/p8-1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p2 {
+        background-image: url(../images/p8-2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p3 {
+        background-image: url(../images/p8-3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #grid-container {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #grid-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .grid {
+        width: 40%;
+        float: left;
+        margin-left: 65px;
+        margin-bottom: 20px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .grid>img {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 20px;
+        height: auto;
+      }
+
+      .grid>h4 {
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .grid>p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: justify;
+        line-height: 30px;
+        color: white;
+      }
+
+      .grid>a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+      .grid>a:hover {
+        background-color: blue;
+      }
+
+      #footer {
+        background-color: plum;
+        height: 100px;
+      }
+
+      #footer>p {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    @media (max-width: 800px) {
+      #header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      .show-btn {
+        display: block;
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 80px 0px;
+        line-height: normal;
+        transition: 0.7s;
+      }
+
+      .menu li {
+        display: block;
+      }
+
+      .manu li a {
+        display: block;
+      }
+
+      #chk:checked~.menu {
+        right: 0;
+      }
+
+      .hide-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      #banner {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 15px;
+        display: flex;
+        font-size: 30px;
+        color: white;
+        margin-top: 90px;
+      }
+
+      #banner h2 {
+        margin: 10px 20px;
+        color: #fff;
+      }
+
+      #circle-container {
+        width: 100%;
+      }
+
+      #circle-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 10%;
+        margin-bottom: 20px;
+      }
+
+      #left-side {
+        width: 100%;
+        height: 200px;
+        background-color: gray;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      #left-p>h2 {
+        text-align: left;
+        margin: 5px 5px;
+      }
+
+      #left-p>p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+        line-height: 28px;
+      }
+
+      #right-side {
+        width: 100%;
+        height: 400px;
+      }
+
+      .article {
+        height: 31%;
+        margin-bottom: 20px;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        overflow: hidden;
+      }
+
+      #p1 {
+        background-image: url(../images/p8-1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p2 {
+        background-image: url(../images/p8-2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p3 {
+        background-image: url(../images/p8-3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #grid-container {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #grid-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .grid {
+        width: 40%;
+        float: left;
+        margin-left: 50px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .grid>img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .grid>h4 {
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .grid>p {
+        margin: 10px;
+        font-size: 15px;
+        text-align: justify;
+        line-height: 25px;
+        color: white;
+      }
+
+      .grid>a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+
+      @media (max-width: 625px) {
+
+        #container {
+          min-width: 320px;
+        }
+
+        .show-btn {
+          display: block;
+        }
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          background-color: #333;
+          text-align: center;
+          padding: 80px 0px;
+          line-height: normal;
+          transition: 0.7s;
+        }
+
+        .menu li {
+          display: block;
+        }
+
+        .manu li a {
+          display: block;
+        }
+
+        #chk:checked~.menu {
+          right: 0;
+        }
+
+        .hide-btn {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px;
+        }
+
+        #banner {
+          width: 100%;
+          height: 250px;
+          margin-bottom: 15px;
+          color: white;
+          margin-top: 90px;
+        }
+
+        #banner h2 {
+          margin: 10px 20px;
+          color: #fff;
+          font-size: 20px;
+        }
+
+        #circle-container {
+          width: 90%;
+          margin-left: 10%;
+        }
+
+        .circle img {
+          height: 70%;
+          width: 70%;
+
+          border-radius: 50%;
+          margin-bottom: 20px;
+        }
+
+        #left-side {
+          width: 100%;
+          height: 200px;
+          background-color: gray;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+
+        #left-p>h2 {
+          text-align: left;
+          margin: 5px 5px;
+        }
+
+        #left-p>p {
+          font-size: 20px;
+          padding: 10px;
+          text-align: justify;
+          line-height: 28px;
+        }
+
+        #right-side {
+          width: 100%;
+          height: 400px;
+        }
+
+        .article {
+          box-sizing: border-box;
+          height: 31%;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+          font-size: 16px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: black;
+          overflow: hidden;
+        }
+
+        #p1 {
+          background-image: url(../images/p8-1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #p2 {
+          background-image: url(../images/p8-2.jpeg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #p3 {
+          background-image: url(../images/p8-3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #grid-container {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .grid {
+          margin-left: 20px;
+          width: 90%;
+          background-color: lightgrey;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+          max-height: 500px;
+        }
+
+        .grid>img {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 20px;
+        }
+
+        .grid>h4 {
+          margin: 0px 10px;
+          text-align: center;
+        }
+
+        .grid>p {
+          margin: 10px;
+          font-size: 15px;
+          text-align: justify;
+          line-height: 25px;
+          color: white;
+        }
+
+        .grid>a {
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+          color: #fff;
+          background-color: red;
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 8px;
+        }
+
+        h1 {
+          color: black;
+          font-size: 20px;
+          text-align: center;
+          padding-top: 25px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+
+             
+
+
+             
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <input type="checkbox" id="chk"/>
+                <label for="chk" class="show-btn">
+                    <i class ="fa fa-bars"></i>
+                </label>
+                <ul class="menu">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#circle-container">Team</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                    <label for="chk" class="hide-btn">
+                        <i class="fa fa-times"></i>
+                    </label>
+                </ul>
+            </div>
+            <a name="top"></a>
+            <div id="banner">
+                <h2>Practical-9</h2>
+            </div>
+            <div id="circle-container">
+                <h1>Team Members</h1>
+                <div class="circle">
+                    <img src="../images/p8-11.png" alt=""/>
+                </div>
+                <div class="circle">
+                    <img src="../images/p8-12.png" alt=""/>
+                </div>
+                <div class="circle">
+                    <img src="../images/p8-13.png" alt=""/>
+                </div>
+                <div class="circle">
+                    <img src="../images/p8-14.png" alt=""/>
+                </div>
+            </div>
+            <div id="sec2-container">
+                <a name="about"></a>
+                <h1>About Us</h1>
+                <div id="left-side">
+                    <div class ="left-content">
+                        <div id="left-p">
+                            <h2>About Projects</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores recusandae autem animi perspiciatis iusto veniam enim tempora. Laudantium voluptatibus dignissimos ab tenetur quidem laborum consectetur ad, dolore consequuntur quaerat optio vel vitae tempora? A, hic. Officia dolore officiis ullam inventore nobis atque quos velit doloribus at! Repellat in similique enim facere odit eum, nesciunt repellendus nam corporis vel ratione minima quas distinctio vero sapiente corrupti unde, accusamus cumque quae? Ducimus nobis eaque tempora, laborum recusandae quaerat accusamus aperiam id aliquam rerum natus magni iusto ex ipsam nam ipsa accusantium ratione quia ad, praesentium perferendis rem repudiandae nemo. Cupiditate, praesentium reprehenderit?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="right-side">
+                    <div class ="article" id="p1">
+                        <h2>Project-1</h2>
+                    </div>
+                    <div class ="article" id="p2">
+                        <h2>Project-2</h2>
+                    </div>
+                    <div class ="article" id="p3">
+                        <h2>Project-3</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="grid-container">
+                <a name="Technologies"></a>
+                <h1>Technologies used</h1>
+                <div class="grid">
+                    <img src="../images/html-l.png" alt=""/>
+                    <h4>Introduction to HTML</h4>
+                    <p>
+                        Lorem ipsum dolor sit ametsam expedita, ut si necessitatibus. Voluptatibus, velit quas neque accusamus nihil nulla reprehenderit. Ex, iure ipsum cumque iste non tenetur debitis accusamus dolorem sunt dicta earum neque tempora eligendi sapiente vel quidem suscipit repudiandae fugit quisquam consequuntur cupiditate voluptatum dolore modi. Deleniti distinctio tempora atque odio!
+                    </p>
+
+                    <a href="../practicals/html.html">Read-More</a>
+                </div>
+                
+                <div class="grid">
+                    <img src="../images/css3-logo.png" alt=""/>
+                    <h4>Introduction to CSS</h4>
+                    <p>
+                        Lorem rcitationem nobprehenderit doloribus inventore dolor recusandae debitis laboriosam expedibusdam cum fugit quis deleniti rem corrupti necessitatibus. Voluptatibus, velit quas neque accusamus nihil nulla reprehenderit.
+                    </p>
+
+                    <a href="../practicals/css.html">Read-More</a>
+                </div>
+                <div class="grid">
+                    <img src="../images/js-logo.png" alt=""/>
+                    <h4>Introduction to JAVASCRIPT</h4>
+                    <p>
+                        Lorem ipis iure nihiln tgendi sapiente vel quiquuntur cupiditate voluptatum dolore modi. Deleniti distinctio tempora atque odio!
+                    </p>
+
+                    <a href="../practicals/js.html">Read-More</a>
+                </div>
+                <div class="grid">
+                    <img src="../images/bootstrap-logo.jfif" alt=""/>
+                    <h4>Introduction to BOOTSTRAP</h4>
+                    <p>
+                        Lorem ipsum dolor sit eat nit temporibus voluptas, quisquam illum rerum blanditiis iure nihil pariatur porro! Cupiditate, at iusto? Placeat reprehenderit doloribus inventore dolor recusandae debitis laboriosam expedita, ut sequi ducimus quibusdam cum fugit quis deleniti rem corrupt
+                    </p>
+
+                    <a href="../practicals/bootstrap.html">Read-More</a>
+                </div>
+            </div>
+            <a name="contact"></a>
+            <h1>Contact</h1>
+            <div id="footer">
+                <p>
+                    Website template for Practical-9 &copy;
+                    <a href="https://beta-labs.in">Beta-Labs</a><br>
+                    <a href="#top">Back to top</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
